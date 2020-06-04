@@ -28,9 +28,11 @@ class Tracer extends BaseTracer {
       try {
         const config = new Config(options)
 
+        platform.configure(config)
+        platform.profiler().start()
+
         if (config.enabled) {
           platform.validate()
-          platform.configure(config)
 
           if (config.runtimeMetrics) {
             platform.metrics().start()

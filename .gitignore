@@ -114,3 +114,5 @@ docs/test.js
 !packages/*/test/**/node_modules
 dist
 acmeair-nodejs
+proto/*.js
+proto/*.ts
