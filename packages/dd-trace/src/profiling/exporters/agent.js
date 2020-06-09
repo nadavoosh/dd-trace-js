@@ -2,6 +2,7 @@
 
 const axios = require('axios')
 const FormData = require('form-data')
+const { URL } = require('url')
 const { Encoder } = require('../encoders/pprof')
 const platform = require('../../platform')
 
