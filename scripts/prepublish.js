@@ -52,7 +52,6 @@ getPipeline()
   .then(downloadArtifacts)
   .then(validatePrebuilds)
   .then(extractPrebuilds)
-  .then(buildProto)
   .then(bundle)
   .catch(e => {
     process.exitCode = 1
@@ -165,11 +164,6 @@ function extractPrebuilds () {
     file: path.join(os.tmpdir(), 'prebuilds.tgz'),
     cwd: path.join(__dirname, '..')
   })
-}
-
-function buildProto () {
-  rimraf.sync('proto/*.{js,ts}')
-  exec('yarn proto')
 }
 
 function bundle () {
