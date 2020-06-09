@@ -46,6 +46,7 @@ class Tracer extends BaseTracer {
           this._instrumenter.enable(config)
         }
       } catch (e) {
+        console.log(e)
         log.error(e)
       }
     }

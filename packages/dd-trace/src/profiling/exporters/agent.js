@@ -11,7 +11,7 @@ class AgentExporter {
     url = url || new URL(`http://${hostname || 'localhost'}:${port || 8126}`)
 
     this._client = axios.create({
-      baseURL: `${this._url}/profiling/v1/`,
+      baseURL: `${url}/profiling/v1/`,
       timeout: 10 * 1000,
       validateStatus: code => code < 400
     })

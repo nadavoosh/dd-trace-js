@@ -48,16 +48,16 @@ describe('exporters/agent', () => {
       heap: createProfile(['space', 'bytes'])
     }
 
-    app.post('/v1/input', upload.any(), (req, res) => {
+    app.post('/profiling/v1/input', upload.any(), (req, res) => {
       try {
         expect(true).to.be.true
 
         expect(req.body).to.have.property('language', 'javascript')
-        expect(req.body).to.have.property('runtime', 'node')
+        expect(req.body).to.have.property('runtime', 'nodejs')
         expect(req.body).to.have.property('format', 'pprof')
         expect(req.body).to.have.deep.property('tags', [
           'language:javascript',
-          'runtime:node',
+          'runtime:nodejs',
           'format:pprof',
           'foo:bar'
         ])

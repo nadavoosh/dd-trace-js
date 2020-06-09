@@ -54,6 +54,9 @@ describe('TracerProxy', () => {
       load: sinon.spy(),
       metrics: sinon.stub().returns({
         start: sinon.spy()
+      }),
+      profiler: sinon.stub().returns({
+        start: sinon.spy()
       })
     }
 
